@@ -16,9 +16,9 @@ public class NumberOfDiceRollsTargetSum {
             return count % (int)(Math.pow(10, 9) + 7);
         }
 
-        while(n > 0)
+        while(n > 0) // This represents the number of dice you can throw
         {
-            for(int i = 1; i <= k && i<=target; i++)
+            for(int i = 1; i <= k && i<=target; i++) // This represents the number of faces of dice available at each throw
             count += numRollsToTarget(n - 1, k, target - i);
 
             break;
