@@ -1,6 +1,9 @@
 public class RemoveDuplicatesSortedList {
 
     public ListNode deleteDuplicates(ListNode head) {
+        if(head == null)
+        return head;
+        
         ListNode node = head;
 
         while(node.next != null)
