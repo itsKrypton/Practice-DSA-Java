@@ -33,12 +33,12 @@ public class FrogJump {
         
         for(int i = 2; i <= n; i++)
         {
-            int oneJump = dp[n-1] + Math.abs(heights[n - 1] - heights[n - 2]);
+            int oneJump = dp[i-1] + Math.abs(heights[i - 1] - heights[i - 2]);
             int twoJump = Integer.MAX_VALUE;
-            if(n > 2)
-            twoJump = dp[n-2] + Math.abs(heights[n - 1] - heights[n - 3]);
+            if(i > 2)
+            twoJump = dp[i-2] + Math.abs(heights[i - 1] - heights[i - 3]);
 
-            dp[n] = Math.min(oneJump, twoJump);
+            dp[i] = Math.min(oneJump, twoJump);
         }
 
         return dp[n];
