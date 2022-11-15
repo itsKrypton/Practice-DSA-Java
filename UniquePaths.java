@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/unique-paths/
+
 //import java.util.Arrays;
 
 public class UniquePaths {
@@ -16,10 +18,10 @@ public class UniquePaths {
         if(currentX == 0 && currentY == 0)
         return 1;
 
-        else if(currentX < 0 || currentY < 0)
+        if(currentX < 0 || currentY < 0)
         return 0;
 
-        else if(dp[currentX][currentY] != -1)
+        if(dp[currentX][currentY] != -1)
         return dp[currentX][currentY];
         
         int up = 0, left = 0;
