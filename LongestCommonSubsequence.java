@@ -90,6 +90,7 @@ public class LongestCommonSubsequence {
                 else
                 temp[j] = Math.max(prev[j], temp[j - 1]);
             }
+            prev = temp;
         }
 
         return prev[text2.length()];
