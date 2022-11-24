@@ -2,6 +2,8 @@
 
 //import java.util.Arrays;
 
+// Similar to BTTBASSIII just change the 2 max capacity to k.
+
 public class BestTimeToBuyAndSellStockIV {
     // Memoization
     /* public int maxProfit(int k, int[] prices) {
@@ -44,7 +46,7 @@ public class BestTimeToBuyAndSellStockIV {
 
     //Tabulation
     /* public int maxProfit(int k, int[] prices) {
-        int dp[][][] = new int[prices.length + 1][2 + 1][k + 1];
+        int dp[][][] = new int[prices.length + 1][2][k + 1];
 
         for(int i = prices.length - 1; i >= 0; i--)
         {
@@ -76,11 +78,11 @@ public class BestTimeToBuyAndSellStockIV {
 
     //Space Optimization
     public int maxProfit(int k, int[] prices) {
-        int next[][] = new int[2 + 1][k + 1];
+        int next[][] = new int[2][k + 1];
 
         for(int i = prices.length - 1; i >= 0; i--)
         {
-            int temp[][] = new int[2 + 1][2 + 1];
+            int temp[][] = new int[2][2 + 1];
             for(int j = 1; j >= 0; j--)
             {
                 for(int l = k - 1; l >= 0; l--)

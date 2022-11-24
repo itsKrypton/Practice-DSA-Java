@@ -45,7 +45,7 @@ public class BestTimeToBuyAndSellStockIII {
 
     // Tabulation
     /* public int maxProfit(int[] prices) {
-        int dp[][][] = new int[prices.length + 1][2 + 1][2 + 1];
+        int dp[][][] = new int[prices.length + 1][2][2 + 1];
 
         for(int i = prices.length - 1; i >= 0; i--)
         {
@@ -77,11 +77,11 @@ public class BestTimeToBuyAndSellStockIII {
 
     //Space Optimization
     public int maxProfit(int[] prices) {
-        int next[][] = new int[2 + 1][2 + 1];
+        int next[][] = new int[2][2 + 1];
 
         for(int i = prices.length - 1; i >= 0; i--)
         {
-            int temp[][] = new int[2 + 1][2 + 1];
+            int temp[][] = new int[2][2 + 1];
             for(int j = 1; j >= 0; j--)
             {
                 for(int k = 1; k >= 0; k--)
