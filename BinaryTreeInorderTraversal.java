@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class BinaryTreeInorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
@@ -9,7 +10,8 @@ public class BinaryTreeInorderTraversal {
         return ans;
     }
 
-    public static void find(TreeNode root, List<Integer> ans)
+    //Recursive solution
+    /* public static void find(TreeNode root, List<Integer> ans)
     {
         if(root == null)
         return;
@@ -17,6 +19,36 @@ public class BinaryTreeInorderTraversal {
         find(root.left, ans);
         ans.add(root.val);
         find(root.right, ans);
+    } */
+
+    //Iterative Solution using stack
+    public static void find(TreeNode root, List<Integer> ans)
+    {
+        if(root == null)
+        return;
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode currentNode = root;
+        while(true)
+        {
+            if(currentNode != null)
+            {
+                stack.push(currentNode);
+                currentNode = currentNode.left;
+            }
+
+            else
+            {
+                if(stack.isEmpty())
+                break;
+
+                currentNode = stack.pop();
+                ans.add(currentNode.val);
+                currentNode = currentNode.right;
+            }
+        }
+
+        return;
     }
 
     public class TreeNode {
