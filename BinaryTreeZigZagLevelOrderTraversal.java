@@ -15,7 +15,7 @@ public class BinaryTreeZigZagLevelOrderTraversal {
 
         while(!queue.isEmpty())
         {
-            List<Integer> subList = new LinkedList<>();
+            LinkedList<Integer> subList = new LinkedList<>();
             int currentSize = queue.size();
             for(int i = 0; i < currentSize; i++)
             {
@@ -26,10 +26,10 @@ public class BinaryTreeZigZagLevelOrderTraversal {
                 queue.add(queue.peek().right);
 
                 if(leftToRight)
-                subList.add(queue.remove().val);
+                subList.addLast(queue.remove().val);
 
                 else
-                subList.add(0, queue.remove().val);
+                subList.addFirst(queue.remove().val);
             }
 
             leftToRight = !leftToRight;
