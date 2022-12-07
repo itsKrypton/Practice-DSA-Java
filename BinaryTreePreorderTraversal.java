@@ -44,6 +44,42 @@ public class BinaryTreePreorderTraversal {
         return;
     }
 
+    // Morris Traversal O(1) time
+    /* public static void find(TreeNode root, List<Integer> ans)
+    {
+        TreeNode current = root;
+        while(current != null)
+        {
+            if(current.left == null)
+            {
+                ans.add(current.val);
+                current = current.right;
+            }
+
+            else
+            {
+                TreeNode prev = current.left;
+                while(prev.right != null && prev.right != current)
+                prev = prev.right;
+
+                if(prev.right == null)
+                {
+                    prev.right = current;
+                    ans.add(current.val);
+                    current = current.left;
+                }
+
+                else
+                {
+                    prev.right = null;
+                    current = current.right;
+                }
+            }
+        }
+
+        return;
+    } */
+
     public class TreeNode {
         int val;
         TreeNode left;
