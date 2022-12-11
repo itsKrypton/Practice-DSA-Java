@@ -44,7 +44,7 @@ public class BinaryTreePreorderTraversal {
         return;
     }
 
-    // Morris Traversal O(1) time
+    // Morris Traversal O(1) space
     /* public static void find(TreeNode root, List<Integer> ans)
     {
         TreeNode current = root;
