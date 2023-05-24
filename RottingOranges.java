@@ -27,9 +27,6 @@ public class RottingOranges {
                     queue.add(new Group(i, j, 0));
                 }
 
-                else 
-                visited[i][j] = 0;
-
                 if(grid[i][j] == 1) freshOranges++;
             }
         }
