@@ -57,7 +57,7 @@ public class BinaryTreeInorderTraversal {
         TreeNode current = root;
         while(current != null)
         {
-            if(current.left == null)
+            if(current.left == null) // No left means we take the current value and move to right
             {
                 ans.add(current.val);
                 current = current.right;
@@ -65,17 +65,17 @@ public class BinaryTreeInorderTraversal {
 
             else
             {
-                TreeNode prev = current.left;
-                while(prev.right != null && prev.right != current)
+                TreeNode prev = current.left; // Go to the left node
+                while(prev.right != null && prev.right != current) // Go to the rightmost node of the left side
                 prev = prev.right;
 
-                if(prev.right == null)
+                if(prev.right == null) // No thread exists, then connect the rightmost node of the left side to the current node and start left traversal.
                 {
                     prev.right = current;
                     current = current.left;
                 }
 
-                else
+                else // If the thread is already there that means we have traversed left side, so remove the thread, add current value and move towards right.
                 {
                     prev.right = null;
                     ans.add(current.val);
