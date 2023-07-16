@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/find-eventual-safe-states/description/
 
 /*
- * We use the cycle detection technique to mark all the nodes that are not a part of a cycle and the nodes which don't lead to a cycle as safe as all these nodes
+ * We use the cycle detection technique to mark all the nodes that are not a part of a cycle and the nodes which don't lead to a cycle as all these nodes
  * will eventually go to a terminal node. Just use the logic from DetectCycleInDirectedGraph
  */
 
