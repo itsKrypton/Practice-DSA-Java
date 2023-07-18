@@ -7,6 +7,8 @@
 
 // Can also be done using a single visited array and marking path visited and visited by two different numbers
 import java.util.ArrayList;
+//import java.util.LinkedList;
+//import java.util.Queue;
 
 public class DetectCycleInDirectedGraph {
     public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
@@ -44,4 +46,38 @@ public class DetectCycleInDirectedGraph {
         
         return false;
     }
+
+    // Solving using BFS (Kahns Algo) as it only works on DAG, if there is a cycle then the size of topo sort won't be equal to V.
+    /* public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
+        int[] indegree = new int[V];
+        for(ArrayList<Integer> list : adj)
+        {
+            for(int node : list)
+            indegree[node]++;
+        }
+        
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i = 0; i < V; i++)
+        {
+            if(indegree[i] == 0)
+            queue.add(i);
+        }
+        
+        int count = 0;
+        int i = 0;
+        
+        while(!queue.isEmpty())
+        {
+            int currentNode = queue.remove();
+            count++;
+            
+            for(int nVertex : adj.get(currentNode))
+            {
+                if(--indegree[nVertex] == 0)
+                queue.add(nVertex);
+            }
+        }
+        
+        return (count == V) ? false : true;
+    } */
 }
