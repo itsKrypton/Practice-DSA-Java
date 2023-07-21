@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class TopologicalSort {
     /*
-    * BFS Traversal
+    * DFS Traversal
     * 
     * The idea is, after all the dfs traversals of a node is done, we put that node in a stack. All the nodes below the stack would have been placed in it only if it has 
     * been already been visited, that means, those nodes are after the current node. So the stack will naturally follow the linear ordering from top to bottom, with the
@@ -47,7 +47,7 @@ public class TopologicalSort {
     } */
 
     /*
-     * DFS Traversal Kahns Algo
+     * BFS Traversal Kahns Algo
      * 
      * Maintain an indegree array and insert the nodes having 0 indegree inside the queue because we know these nodes will always be in the front of answer as these nodes
      * will only have edges going outwards to other nodes. On every removal of queue node, reduce the indegree of all nodes connected to it as we are removing this node.
