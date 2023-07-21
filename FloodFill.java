@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/flood-fill/description/
 
 /*
- * Pretty much a DFS/BFS, you just color all the cells connected horizontally or diagonally to the starting cell if it's same as the initial color and not already visited.
+ * Pretty much a DFS/BFS, you just color all the cells connected horizontally or vertically to the starting cell if it's same as the initial color and not already visited.
  */
 
 public class FloodFill {

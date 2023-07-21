@@ -38,7 +38,7 @@ public class SerializeAndDeserializeBinaryTree {
 
         String[] values = data.split(" ");
         Queue<TreeNode> queue = new LinkedList<>();
-        TreeNode root = new TreeNode(Integer.parseInt(values[0]));
+        TreeNode root = new TreeNode(Integer.valueOf(values[0]));
         queue.add(root);
 
         while(!queue.isEmpty())
@@ -49,14 +49,14 @@ public class SerializeAndDeserializeBinaryTree {
 
                 if(!values[i].equals("x"))
                 {
-                    TreeNode left = new TreeNode(Integer.parseInt(values[i]));
+                    TreeNode left = new TreeNode(Integer.valueOf(values[i]));
                     current.left = left;
                     queue.add(left);
                 }
 
                 if(!values[++i].equals("x"))
                 {
-                    TreeNode right = new TreeNode(Integer.parseInt(values[i]));
+                    TreeNode right = new TreeNode(Integer.valueOf(values[i]));
                     current.right = right;
                     queue.add(right);
                 }
