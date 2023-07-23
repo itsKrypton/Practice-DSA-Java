@@ -148,16 +148,12 @@ public class LongestIncreasingSubsequence {
     }
     public static int lengthOfLIS(int[] nums) {
         ArrayList<Integer> lis = new ArrayList<>();
-        int length = 1;
         lis.add(nums[0]);
 
         for(int i = 1; i < nums.length; i++)
         {
-            if(nums[i] > lis.get(length - 1))
-            {
-                lis.add(nums[i]);
-                length++;
-            }
+            if(nums[i] > lis.get(lis.size() - 1))
+            lis.add(nums[i]);
 
             else
             {
@@ -166,7 +162,7 @@ public class LongestIncreasingSubsequence {
             }
         }
 
-        return length;
+        return lis.size();
     }
 
     public static int binarySearch(int target, ArrayList<Integer> lis)
