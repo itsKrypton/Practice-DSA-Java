@@ -1,7 +1,7 @@
 // https://practice.geeksforgeeks.org/problems/bipartite-graph/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
 
 /*
- * Simple BFS or DFS traversal with a slight change. Whenever a nVerted is already visited then check if it's the opposite colour of current vertex, if it's not then
+ * Simple BFS or DFS traversal with a slight change. Whenever a nVertex is already visited then check if it's the opposite colour of current vertex, if it's not then
  * immediately return false otherwise continue with the normal BFS. Here 1 and 2 represents two different colors and 0 means vertex is not visited.
  */
 
