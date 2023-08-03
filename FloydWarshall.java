@@ -6,6 +6,8 @@
  * route from and other two loops to mark the current row and column. Then simply set the distance as minimum of current distance and current node to set node + set node
  * to neighbor node.
  * 
+ * To find negative cycle, just check diagonal values. if they're negative then there is a negative cycle.
+ * 
  * T: O(v^3)
  */
 
@@ -14,6 +16,7 @@ public class FloydWarshall {
     {
         for(int i = 0; i < matrix.length; i++)
         {
+            // Set the initial distance matrix
             for(int j = 0; j < matrix[0].length; j++)
             {
                 if(i == j)
@@ -24,6 +27,7 @@ public class FloydWarshall {
             }
         }
         
+        // Update each node V times.
         for(int i = 0; i < matrix.length; i++)
         {
             for(int j = 0; j < matrix.length; j++)
@@ -33,6 +37,7 @@ public class FloydWarshall {
             }
         }
         
+        // Setting 1e9 nodes to -1 again.
         for(int i = 0; i < matrix.length; i++)
         {
             for(int j = 0; j < matrix[0].length; j++)
