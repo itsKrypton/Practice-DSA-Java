@@ -12,7 +12,7 @@ import java.util.Arrays;
  * 
  * Kruskals: Sort the given edges in ascending order. Use a disjointset (see it's explanation in DisjointSet) to find the ultimate parent of the two given nodes,
  * if it's not the same then consider that edge. If the parents come out to be same that means that it will form a cycle and we don't want that in MST.
- * T: E
+ * T: ElogE
  * S: V (In DisjointSet)
  */
 
