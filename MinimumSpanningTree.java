@@ -6,6 +6,8 @@ import java.util.PriorityQueue;
 /*
  * Used to find MST, take a visited node and priority queue which will store neighbor nodes and weights. For Prims algo, start with any node and store all it's 
  * unvisited edges to a priority queue, take the edge with the smallest weight and mark it as visited. Continue till the queue is not empty. 
+ * 
+ * T: ElogE
  */
 
 public class MinimumSpanningTree {
