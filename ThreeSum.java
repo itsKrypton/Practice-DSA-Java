@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
+/*
+ * Sort the given input, traverse through the entire array using one pointer to get the first number, for the next two numbers, find it in O(n) time using two pointers,
+ * from first pointer + 1 to end of the array. Use a hashset to eliminate duplicate entries.
+ */
+
 public class ThreeSum {
     public static void main(String args[])
     {
