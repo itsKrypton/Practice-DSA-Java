@@ -5,8 +5,38 @@
  * traversal or find number of nodes n and pass (n - k + 1) to smallest node function.
  */
 
+import java.util.Stack;
+
 public class KthSmallestValueInBST {
+    // Iterative version T: O(n) S:O(n) for recursive stack space
     public int kthSmallest(TreeNode root, int k) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+        int count = 0;
+
+        while(true)
+        {
+            // Move left till you can
+            while(current != null)
+            {
+                stack.push(current);
+                current = current.left;
+            }
+
+            // Pop out the root and increment the count
+            current = stack.pop();
+            count++;
+
+            if(count == k)
+                return current.val;
+
+            // Move to right
+            current = current.right;
+        }
+    }
+
+    // Recursive version T: O(n) S:O(n) for recursive stack space
+    /* public int kthSmallest(TreeNode root, int k) {
         int[] temp = new int[1];
         temp[0] = k;
 
@@ -26,7 +56,7 @@ public class KthSmallestValueInBST {
         return root.val;
 
         return find(root.right, k);
-    }
+    } */
 
     public class TreeNode {
         int val;
