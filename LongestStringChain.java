@@ -1,5 +1,5 @@
 import java.util.Arrays;
-import java.util.Comparator;
+//import java.util.Comparator;
 
 public class LongestStringChain {
     public int longestStrChain(String[] words) {
@@ -21,7 +21,8 @@ public class LongestStringChain {
             
         }); */
 
-        Arrays.sort(words, Comparator.comparingInt(String::length));
+        /* Arrays.sort(words, Comparator.comparingInt(String::length)); */
+        Arrays.sort(words, (a,b) -> Integer.compare(a.length(), b.length()));
 
         int max = 1;
 
@@ -49,12 +50,8 @@ public class LongestStringChain {
         while(i < word1.length())
         {
             if(word1.charAt(i) == word2.charAt(j))
-            {
-                i++;
                 j++;
-            }
 
-            else
             i++;
         }
 
